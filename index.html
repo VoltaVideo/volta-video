@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Volta Video Rental</title>
+
+    <!-- ✅ THIS IS THE MOST IMPORTANT FIX -->
+    <meta name="viewport" content="width=1024">
 
     <style>
         body {
@@ -9,6 +13,15 @@
             color: white;
             font-family: "Comic Sans MS", cursive;
             margin: 0;
+
+            /* ✅ Prevent mobile squishing */
+            overflow-x: auto;
+        }
+
+        /* ✅ FORCE desktop-like minimum width */
+        .container {
+            display: flex;
+            min-width: 1100px;
         }
 
         .top-bar {
@@ -17,6 +30,7 @@
             align-items: center;
             gap: 40px;
             margin-top: 30px;
+            min-width: 1100px;
         }
 
         h1 {
@@ -35,15 +49,13 @@
             white-space: nowrap;
         }
 
-        .container {
-            display: flex;
-        }
-
+        /* LEFT COLUMN */
         .left-column {
             width: 280px;
             padding: 20px;
         }
 
+        /* CENTER COLUMN */
         .center-column {
             flex: 1;
             display: flex;
@@ -52,6 +64,7 @@
             padding-top: 80px;
         }
 
+        /* RIGHT COLUMN */
         .right-column {
             width: 360px;
             padding: 20px;
@@ -124,7 +137,7 @@
 
         @keyframes blinkLights {
             from { opacity: 1; }
-            to   { opacity: 0.4; }
+            to { opacity: 0.4; }
         }
 
         .location-section {
@@ -172,7 +185,6 @@
             margin-top: 10px;
         }
     </style>
-
 </head>
 
 <body>
@@ -192,24 +204,19 @@
 
 <div class="container">
 
-    <!-- LEFT -->
     <div class="left-column">
         <div class="poster-case">
             <div class="poster-content">
-
                 <div class="poster-screen">
                     <img id="posterImage" src="images/Terminator 2 (1991) poster.webp">
                 </div>
-
                 <div class="poster-label">
                     🎬 AVAILABLE MOVIES 🎬
                 </div>
-
             </div>
         </div>
     </div>
 
-    <!-- CENTER -->
     <div class="center-column">
         <div class="location-section">
 
@@ -237,7 +244,6 @@
         </div>
     </div>
 
-    <!-- RIGHT -->
     <div class="right-column">
         <div class="map-section">
             <img src="images/Humboldt_County_California_Incorporated_and_Unincorporated_areas_Arcata_Highlighted_0602476 copy.png">
