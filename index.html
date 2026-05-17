@@ -4,10 +4,9 @@
 <head>
     <title>Volta Video Rental</title>
 
-    <!-- Desktop-style scaling -->
+    <!-- Force desktop layout -->
     <meta name="viewport" content="width=1200">
 
-    <!-- ✅ Better cross-device font -->
     <style>
         body {
             background-color: black;
@@ -35,10 +34,6 @@
         .box {
             border: 3px dashed yellow;
             padding: 20px;
-        }
-
-        .intro {
-            max-width: 400px;
         }
 
         .intro p {
@@ -80,12 +75,7 @@
             margin: 20px;
             border: 6px solid red;
             background: black;
-
-            box-shadow:
-                0 0 10px red,
-                0 0 20px red,
-                0 0 30px orange;
-
+            box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px orange;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -121,7 +111,6 @@
             background: black;
             color: gold;
             padding: 12px;
-            font-size: 16px;
             text-align: center;
             border-top: 2px solid white;
         }
@@ -163,6 +152,13 @@
             background: white;
             padding: 10px;
         }
+
+        .map-section p {
+            color: cyan;
+            margin-top: 10px;
+            text-align: center;
+        }
+
     </style>
 </head>
 
@@ -187,12 +183,15 @@
     <div class="left-column">
         <div class="poster-case">
             <div class="poster-content">
+
                 <div class="poster-screen">
-                    ">
+                    <img id="posterImage" src="images/Terminator 2 (1991) poster.webp">
                 </div>
+
                 <div class="poster-label">
                     🎬 AVAILABLE MOVIES 🎬
                 </div>
+
             </div>
         </div>
     </div>
@@ -200,33 +199,35 @@
     <!-- CENTER -->
     <div class="center-column">
         <div class="location-section">
+
             <h2>Select a Location</h2>
 
             <div class="location-grid">
 
                 <div class="location-item">
-                    images/arcata-ca-seal.webp
+                    <img src="images/arcata-ca-seal.webp">
                     <p>Arcata</p>
                 </div>
 
                 <div class="location-item">
-                    images/poway-ca-seal.webp
+                    <img src="images/poway-ca-seal.webp">
                     <p>Poway</p>
                 </div>
 
                 <div class="location-item">
-                    images/san-luis-obispo-ca-city-seal.webp
+                    <img src="images/san-luis-obispo-ca-city-seal.webp">
                     <p>San Luis Obispo</p>
                 </div>
 
             </div>
+
         </div>
     </div>
 
     <!-- RIGHT -->
     <div class="right-column">
         <div class="map-section">
-            images/Humboldt_County_California_Incorporated_and_Unincorporated_areas_Arcata_Highlighted_0602476 copy.png
+            <img src="images/Humboldt_County_California_Incorporated_and_Unincorporated_areas_Arcata_Highlighted_0602476 copy.png">
             <p>📍 California Store Locations</p>
         </div>
     </div>
