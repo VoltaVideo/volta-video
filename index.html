@@ -4,30 +4,40 @@
 <head>
     <title>Volta Video Rental</title>
 
-    <!-- Force desktop layout -->
+    <!-- Desktop view on mobile -->
     <meta name="viewport" content="width=1200">
 
+    <!-- ✅ Add a stronger retro font fallback -->
     <style>
+
         body {
             background-color: black;
             color: white;
-            font-family: "Courier New", "Comic Sans MS", cursive;
+            font-family: "Courier New", monospace;
             margin: 0;
             overflow-x: auto;
         }
 
+        /* ✅ FIXED HEADER ALIGNMENT */
         .top-bar {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 40px;
+            gap: 30px;
             margin-top: 30px;
-            min-width: 1200px;
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         h1 {
             color: cyan;
             text-shadow: 0 0 10px purple;
+
+            /* ✅ Force consistent text look */
+            font-family: "Courier New", monospace;
+            letter-spacing: 2px;
+
             margin: 0;
         }
 
@@ -36,15 +46,21 @@
             padding: 20px;
         }
 
+        /* ✅ FIX INTRO POSITION */
+        .intro {
+            width: 320px;
+            text-align: left;
+        }
+
         .intro p {
             margin: 5px 0;
-            white-space: nowrap;
             font-size: 14px;
         }
 
         .container {
             display: flex;
-            min-width: 1200px;
+            width: 1200px;
+            margin: 0 auto;
         }
 
         .left-column {
@@ -56,16 +72,12 @@
             flex: 1;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
             padding-top: 80px;
         }
 
         .right-column {
             width: 360px;
             padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
             padding-top: 80px;
         }
 
@@ -75,10 +87,13 @@
             margin: 20px;
             border: 6px solid red;
             background: black;
-            box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px orange;
+
+            box-shadow:
+                0 0 10px red,
+                0 0 20px red,
+                0 0 30px orange;
+
             position: relative;
-            display: flex;
-            flex-direction: column;
         }
 
         .poster-case::before {
@@ -90,15 +105,6 @@
             bottom: -12px;
             border: 10px dotted yellow;
             animation: blinkLights 1s infinite alternate;
-            z-index: 0;
-        }
-
-        .poster-content {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
         }
 
         .poster-screen img {
@@ -108,11 +114,9 @@
         }
 
         .poster-label {
-            background: black;
             color: gold;
-            padding: 12px;
             text-align: center;
-            border-top: 2px solid white;
+            padding: 10px;
         }
 
         @keyframes blinkLights {
@@ -121,42 +125,44 @@
         }
 
         .location-section h2 {
-            text-shadow: 0 0 8px cyan;
-            font-size: 26px;
-            color: yellow;
             text-align: center;
+            color: yellow;
+            text-shadow: 0 0 8px cyan;
         }
 
         .location-grid {
             display: flex;
-            justify-content: center;
-            gap: 80px;
+            gap: 60px;
             margin-top: 25px;
+            justify-content: center;
+        }
+
+        .location-item {
+            text-align: center;
         }
 
         .location-item img {
-            width: 140px;
-            height: 140px;
-            object-fit: contain;
+            width: 120px;
+            height: 120px;
             background: white;
             padding: 8px;
             border-radius: 12px;
-            display: block;
-            margin: 0 auto 12px auto;
+        }
+
+        .map-section {
+            text-align: center;
         }
 
         .map-section img {
-            width: 320px;
+            width: 300px;
             border: 4px solid cyan;
             box-shadow: 0 0 15px cyan;
             background: white;
-            padding: 10px;
         }
 
         .map-section p {
-            color: cyan;
             margin-top: 10px;
-            text-align: center;
+            color: cyan;
         }
 
     </style>
@@ -182,24 +188,16 @@
     <!-- LEFT -->
     <div class="left-column">
         <div class="poster-case">
-            <div class="poster-content">
-
-                <div class="poster-screen">
-                    <img id="posterImage" src="images/Terminator 2 (1991) poster.webp">
-                </div>
-
-                <div class="poster-label">
-                    🎬 AVAILABLE MOVIES 🎬
-                </div>
-
+            <div class="poster-screen">
+                <img id="posterImage" src="images/Titanic-Vintage-Movie-Poster-Original_9708fb19.webp">
             </div>
         </div>
+        <div class="poster-label">🎬 AVAILABLE MOVIES 🎬</div>
     </div>
 
     <!-- CENTER -->
     <div class="center-column">
         <div class="location-section">
-
             <h2>Select a Location</h2>
 
             <div class="location-grid">
@@ -220,7 +218,6 @@
                 </div>
 
             </div>
-
         </div>
     </div>
 
