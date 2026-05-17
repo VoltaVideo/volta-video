@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Volta Video Rental</title>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: "Comic Sans MS", cursive;
+            margin: 0;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        h1 {
+            color: cyan;
+            text-shadow: 0 0 10px purple;
+            margin: 0;
+        }
+
+        .box {
+            border: 3px dashed yellow;
+            padding: 20px;
+        }
+
+        .intro p {
+            margin: 5px 0;
+            white-space: nowrap;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .left-column {
+            width: 280px;
+            padding: 20px;
+        }
+
+        .center-column {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 80px;
+        }
+
+        .right-column {
+            width: 360px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 80px;
+        }
+
+        .poster-case {
+            width: 240px;
+            height: 400px;
+            margin: 20px;
+            border: 6px solid red;
+            background: black;
+
+            box-shadow:
+                0 0 10px red,
+                0 0 20px red,
+                0 0 30px orange;
+
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .poster-case::before {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            right: -12px;
+            bottom: -12px;
+            border: 10px dotted yellow;
+            animation: blinkLights 1s infinite alternate;
+            z-index: 0;
+        }
+
+        .poster-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .poster-screen {
+            flex: 1;
+            background: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .poster-screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .poster-label {
+            background: black;
+            color: gold;
+            padding: 12px;
+            font-size: 16px;
+            text-align: center;
+            border-top: 2px solid white;
+            white-space: nowrap;
+        }
+
+        @keyframes blinkLights {
+            from { opacity: 1; }
+            to   { opacity: 0.4; }
+        }
+
+        .location-section {
+            text-align: center;
+        }
+
+        .location-section h2 {
+            text-shadow: 0 0 8px cyan;
+            font-size: 26px;
+            color: yellow;
+        }
+
+        .location-grid {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 25px;
+        }
+
+        .location-item img {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            background: white;
+            padding: 8px;
+            border-radius: 12px;
+            display: block;
+            margin: 0 auto 12px auto;
+        }
+
+        .map-section {
+            text-align: center;
+        }
+
+        .map-section img {
+            width: 320px;
+            border: 4px solid cyan;
+            box-shadow: 0 0 15px cyan;
+            background: white;
+            padding: 10px;
+        }
+
+        .map-section p {
+            color: cyan;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="top-bar">
+
+    <div class="box">
+        <h1>📼 VOLTA VIDEO RENTAL 📼</h1>
+    </div>
+
+    <div class="intro">
+        <p>Welcome to the best 90s video store in town!</p>
+        <p>We’ve got VHS tapes, cult classics, and late fees 😎</p>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <!-- LEFT -->
+    <div class="left-column">
+        <div class="poster-case">
+            <div class="poster-content">
+
+                <div class="poster-screen">
+                    <img id="posterImage" src="images/Terminator 2 (1991) poster.webp">
+                </div>
+
+                <div class="poster-label">
+                    🎬 AVAILABLE MOVIES 🎬
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- CENTER -->
+    <div class="center-column">
+        <div class="location-section">
+
+            <h2>Select a Location</h2>
+
+            <div class="location-grid">
+
+                <div class="location-item">
+                    <img src="images/arcata-ca-seal.webp">
+                    <p>Arcata</p>
+                </div>
+
+                <div class="location-item">
+                    <img src="images/poway-ca-seal.webp">
+                    <p>Poway</p>
+                </div>
+
+                <div class="location-item">
+                    <img src="images/san-luis-obispo-ca-city-seal.webp">
+                    <p>San Luis Obispo</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-column">
+        <div class="map-section">
+            <img src="images/Humboldt_County_California_Incorporated_and_Unincorporated_areas_Arcata_Highlighted_0602476 copy.png">
+            <p>📍 California Store Locations</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+window.onload = function () {
+
+    const posters = [
+        "images/Terminator 2 (1991) poster.webp",
+        "images/Titanic-Vintage-Movie-Poster-Original_9708fb19.webp",
+        "images/Jurassic Park (1993) poster.webp",
+        "images/the_matrix_1999_bus_stop_original_film_art.webp"
+    ];
+
+    let current = 0;
+    const imageElement = document.getElementById("posterImage");
+
+    setInterval(() => {
+        current = (current + 1) % posters.length;
+        imageElement.src = posters[current];
+    }, 5000);
+
+};
+</script>
+
+</body>
+</html>
